@@ -1,0 +1,6 @@
+raw/
+work/
+.venv/
+pipeline/
+*.md
+build.sh
