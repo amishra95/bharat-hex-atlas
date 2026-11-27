@@ -1,0 +1,61 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Bharat Hex Atlas</title>
+<meta name="description" content="India as a strategy-game map, built from real public data: 2025 population, NFHS-6, GSDP 2024-25, PLFS 2025, OpenStreetMap, UNESCO, IBTrACS and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<div id="app">
+  <header id="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Bharat Hex Atlas</h1>
+        <p>India as a strategy map, built from real data</p>
+      </div>
+    </div>
+    <div id="yields" class="yields" aria-label="National yields"></div>
+    <div class="search">
+      <input id="search" type="search" placeholder="Find a city or district…" autocomplete="off" aria-label="Search cities and districts">
+      <ul id="search-results" role="listbox"></ul>
+    </div>
+  </header>
+
+  <aside id="lenses" aria-label="Map lenses">
+    <div class="panel-title">Lenses</div>
+    <div id="lens-list"></div>
+  </aside>
+
+  <main id="stage">
+    <canvas id="map" aria-label="Hex map of India"></canvas>
+    <div id="tooltip" role="status"></div>
+    <div id="legend"></div>
+    <div id="zoomctl">
+      <button id="zin" aria-label="Zoom in">+</button>
+      <button id="zout" aria-label="Zoom out">−</button>
+      <button id="zhome" aria-label="Reset view">⌂</button>
+    </div>
+    <div id="loading">Loading the subcontinent…</div>
+  </main>
+
+  <aside id="info" aria-label="Selection details">
+    <div id="info-body">
+      <div class="empty">
+        <h2>Select a tile</h2>
+        <p>Every hex is 541 km², a 25 km cell of real India. Click one to see its terrain, yields, district and the data behind it.</p>
+        <p class="muted">Scroll or pinch to zoom; drag to pan. Pick a lens on the left, or open an advisor below.</p>
+      </div>
+    </div>
+  </aside>
+
+  <nav id="advisors" aria-label="Advisors"></nav>
+</div>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
